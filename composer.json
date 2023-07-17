@@ -1,0 +1,23 @@
+{
+    "name": "abenalee/ttlock",
+    "description": "PHP SDK for TTLOCK",
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": "^7.0.1"
+    },
+    "require-dev": {
+        "eaglewu/swoole-ide-helper": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "韩文博",
+            "email": "9476400@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Abenalee\\Ttlock\\": "src/"
+        }
+    }
+}
