@@ -135,18 +135,19 @@ class Passcode extends TTLockAbstract
 	 * @throws \GuzzleHttp\Exception\GuzzleException | \Exception
 	 * @author 韩文博
 	 */
-	public function add( int $lockId, string $keyboardPwd, int $startDate, int $endDate, int $addType, int $date ) : array
+	public function add( int $lockId, string $keyboardPwd, string $keyboardPwdName, int $keyboardPwdType, int $startDate, int $endDate, int $addType, int $date ) : array
 	{
 		$response = $this->client->request( 'POST', '/v3/keyboardPwd/add', [
 			'form_params' => [
-				'clientId'    => $this->clientId,
-				'accessToken' => $this->accessToken,
-				'lockId'      => $lockId,
-				'keyboardPwd' => $keyboardPwd,
-				'startDate'   => $startDate,
-				'endDate'     => $endDate,
-				'addType'     => $addType,
-				'date'        => $date,
+				'clientId'        => $this->clientId,
+				'accessToken'     => $this->accessToken,
+				'lockId'          => $lockId,
+				'keyboardPwd'     => $keyboardPwd,
+				'keyboardPwdName' => $keyboardPwdName,
+				'keyboardPwdType' => $keyboardPwdType,
+				'startDate'       => $startDate,
+				'endDate'         => $endDate,
+				'date'            => $date,
 			],
 		] );
 		$body     = json_decode( $response->getBody()->getContents(), true );
