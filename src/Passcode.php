@@ -148,6 +148,7 @@ class Passcode extends TTLockAbstract
 				'startDate'       => $startDate,
 				'endDate'         => $endDate,
 				'date'            => $date,
+                'addType'         => $addType
 			],
 		] );
 		$body     = json_decode( $response->getBody()->getContents(), true );
